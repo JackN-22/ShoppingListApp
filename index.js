@@ -12,6 +12,7 @@ const itemsInDB = ref(database, "shoppingList")
 const inputEl = document.getElementById("input-el")
 const addBtn = document.getElementById("add-btn")
 const shoppingListEl = document.getElementById("shopping-list")
+const darkModeBtn = document.getElementById("icon")
 
 onValue(itemsInDB, function(snapshot){
 
@@ -40,6 +41,22 @@ addBtn.addEventListener("click", function(){
     clearInput()
 })
 
+document.addEventListener('DOMContentLoaded', function() {
+    let shoppingIcon = document.getElementById('shopping');
+
+    // Add a click event listener to trigger the animation
+    addBtn.addEventListener('click', function() {
+        // Disable the animation
+        shoppingIcon.style.animation = 'none';
+
+        // Force a reflow
+        void shoppingIcon.offsetWidth;
+
+        // Enable the animation again
+        shoppingIcon.style.animation = 'jump-shaking 1s ease';
+    });
+});
+
 function clearShoppingList(){
     shoppingListEl.innerHTML = ""
 }
@@ -56,11 +73,27 @@ function appendItems(item){
     let newEl = document.createElement("li")
     newEl.textContent = itemValue
 
-    newEl.addEventListener("click", function(){
+    newEl.addEventListener("dblclick", function(){
         let exactLocationInDB = ref(database, `shoppingList/${itemID}`)
         remove(exactLocationInDB)
     })
-
     shoppingListEl.append(newEl)
-
 }
+
+darkModeBtn.addEventListener("click", function(){
+    const body = document.body;
+    const contentContainer = document.querySelector(".content")
+    const shoppingColor = document.querySelector("#shopping")
+    const icon = document.getElementById("icon")
+    body.classList.toggle("light")
+    body.classList.toggle("dark")
+
+    contentContainer.classList.toggle("dark")
+    contentContainer.classList.toggle("light-mode")
+    shoppingColor.classList.toggle("dark-shopping")
+
+    icon.classList.toggle("fa-sun");
+    icon.classList.toggle("fa-moon");
+})
+
+

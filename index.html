@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet"> 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:ital@1&display=swap" rel="stylesheet">    
+    <link rel="apple-touch-icon" sizes="180x180" href="images/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">   
-    <title>Mini Firebase App</title>
-</head>
+    <link rel="manifest" href="/site.webmanifest">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ 
 <body>
-    <div class="container">
-        <h1>Shopping Items</h1>
-        <img src="trolley.png" alt="">
+    <div class="content">
+        <i id="icon" class="fas fa-sun" id="icon"></i>      
+        <h1>Shopping <span>Items</span></h1>
+        <i id="shopping" class="fa fa-shopping-cart"></i>
         <input type="text" id="input-el" placeholder="Enter Item">
         <button id="add-btn">Add Items</button>
         <ul id="shopping-list">
         </ul>
+        <p id="darkmode-el"></p>
     </div>
     <script src="index.js" type="module"></script>
 </body>

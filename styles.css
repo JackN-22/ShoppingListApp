@@ -1,13 +1,53 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Rubik', sans-serif;
-    font-style: none;
+    font-family: 'Livvic';    
 }
 
-.container {
+.light{
+    background-color: #E0F4FF;
+    transition: background-color 25s ease;
+}
+
+.dark{
+    background-color: #164863;
+    color: white;
+    transition: background-color 0.5s ease;
+}
+
+.dark-shopping {
+    background-color: inherit;
+    color: #164863 !important;
+}
+
+body{
+    background-color: #E0F4FF;
+}
+
+.light span,
+.light h1
+{
+    color: #87C4FF;
+}
+
+.dark span {
+    color: #164863;
+}
+
+.dark li:hover,
+.dark button:hover {
+    background-color: #164863;
+    color: white;
+}
+
+.dark h1 {
+    color: white;
+}
+
+.content {
+    transition: background-color 0.5s ease;
     margin-top: 20px;
-    background-color: #A7C7E7;
+    background-color: #87C4FF;
     display: flex;
     flex-direction: column;
     max-width: 320px;
@@ -17,10 +57,39 @@
     text-align: center;
     user-select: none;
     align-items: center;
+    box-shadow: 10px 7px 5px #87C4FF;
+}
+
+.content.dark{
+    background-color: #427D9D;
+    color: black;
+    box-shadow: 5px 7px 5px #427D9D;
+}
+
+.content.light{
+    box-shadow: 5px 7px 5px #427D9D;
+
 }
 
 h1{
-    color: white;
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.fa-sun{
+    font-size: 35px;
+    margin-left: 90%;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.fa-moon{
+    font-size: 35px;
+    margin-left: 90%;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 button {
@@ -31,7 +100,7 @@ button {
     text-align: center;
     background-color: white;
     color: black;
-    padding: 2px;
+    padding: 10px;
     cursor: pointer;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -39,18 +108,37 @@ button {
     margin: auto;
 }
 
-img {
-    height: 125px;
-    width: 125px;
+span {
+    color: #E0F4FF;
 }
 
+#shopping {
+    font-size: 90px;
+    color: #E0F4FF;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    animation: jump-shaking 1s ease;
+    animation-iteration-count: 1;    
+}
+
+@keyframes jump-shaking {
+    
+    0% { transform: translateX(0) }
+    25% { transform: translateY(-9px) }
+    35% { transform: translateY(-9px) rotate(17deg) }
+    55% { transform: translateY(-9px) rotate(-17deg) }
+    65% { transform: translateY(-9px) rotate(17deg) }
+    75% { transform: translateY(-9px) rotate(-17deg) }
+    100% { transform: translateY(0) rotate(0) }
+  }
+
 button:hover{
-    background-color: #B6D0E2;
+    background-color: #E0F4FF;
     color: black;
 }
 
 #input-el{
-    padding: 5px;
+    padding: 10px;
     height: 15px;
     margin-top: 0px;
     margin-bottom: 30px;
@@ -60,17 +148,16 @@ button:hover{
 }
 ul li{
     margin: 5px;
-    padding: 3px;
+    padding: 10px;
     border-radius: 5px;
     text-align: center;
     flex-grow: 1;
-    background-color: white;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2)
-
+    background-color: #ffffff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 ul {
-
     margin-top: 20px;
     list-style-type: none;
     display: flex;
@@ -80,6 +167,10 @@ ul {
 }
 
 li:hover{
-    background-color: #B6D0E2;
-    color: white;
+    background-color: #E0F4FF;
+    color: black;
+}
+
+#icon {
+    transition: color 0.5s ease;
 }
